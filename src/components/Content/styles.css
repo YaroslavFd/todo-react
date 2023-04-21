@@ -1,0 +1,17 @@
+.content {
+  max-width: 750px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.wrapper {
+  padding: 30px 50px;
+}
+
+.title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 31px;
+  margin-bottom: 25px;
+}

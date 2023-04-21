@@ -1,0 +1,22 @@
+.btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.delete-all {
+  cursor: pointer;
+  border: none;
+  background-color: #EA5959;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 30px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.delete-all:hover {
+  background-color: #d54f4f;
+}
+
+.btn-title {
+  font-size: 22px;
+}

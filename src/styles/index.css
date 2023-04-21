@@ -1,0 +1,15 @@
+@import url('./normalize.css');
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  background-color: #EA5959;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

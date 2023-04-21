@@ -1,0 +1,37 @@
+.add-task-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.add-task {
+  width: 100%;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  background-color: #F3F3F3;
+}
+
+.add-task::placeholder {
+  color:#B5B5B5;
+}
+
+.add-task-btn {
+  cursor: pointer;
+  width: 42px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  border: none;
+  border-radius: 100%;
+  background-color: #EA5959;
+  color: #fff;
+  font-size: 22px;
+  line-height: 22px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.add-task-btn:hover {
+  background-color: #d54f4f;
+}
