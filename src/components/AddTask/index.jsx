@@ -1,4 +1,5 @@
 import { useState } from "react";
+import uuid from "react-uuid";
 import "./style.css";
 
 const AddTask = ({ tasks, setTasks }) => {
@@ -8,7 +9,7 @@ const AddTask = ({ tasks, setTasks }) => {
     e.preventDefault();
 
     if (value.trim()) {
-      setTasks([...tasks, { value: value, done: false }]);
+      setTasks([...tasks, { value: value, done: false, id: uuid() }]);
     }
 
     setValue("");

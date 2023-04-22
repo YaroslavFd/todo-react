@@ -1,4 +1,5 @@
 import { useState } from "react";
+import uuid from "react-uuid";
 import TaskList from "../TaskList";
 import AddTask from "../AddTask";
 import BtnDeleteAll from "../BtnDeleteAll";
@@ -7,18 +8,9 @@ import "./styles.css";
 
 const Content = () => {
   const [tasks, setTasks] = useState([
-    {
-      value: "Pay mortgage",
-      done: false,
-    },
-    {
-      value: "Replace laptop’s screen",
-      done: false,
-    },
-    {
-      value: "Purchase Milk & Corn Flakes",
-      done: false,
-    },
+    { id: uuid(), value: "Pay mortgage", done: false },
+    { id: uuid(), value: "Replace laptop’s screen", done: false },
+    { id: uuid(), value: "Purchase Milk & Corn Flakes", done: false },
   ]);
 
   const delCompletedTasks = () => {

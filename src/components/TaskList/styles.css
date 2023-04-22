@@ -1,3 +1,46 @@
 .task-list{
-  margin: 30px 0;
+  position: relative;
+  padding: 30px 0;
+}
+
+.item-enter {
+  opacity: 0;
+  transform: translateX(-250px);
+}
+.item-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 500ms ease-in;
+}
+.item-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+.item-exit-active {
+  opacity: 0;
+  transform: translateX(-250px);
+  transition: all 500ms ease-in;
+}
+
+.empty-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+.empty-enter {
+  opacity: 0;
+}
+.empty-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.empty-exit {
+  opacity: 1;
+}
+.empty-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in;
 }

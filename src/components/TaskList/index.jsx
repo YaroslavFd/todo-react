@@ -1,3 +1,4 @@
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import TaskItem from "../TaskItem";
 
 import "./styles.css";
@@ -5,8 +6,8 @@ import "./styles.css";
 const TaskList = ({ tasks, setTasks }) => {
   const deleteTask = (indexToRemove) => {
     setTasks((prev) => {
-      return prev.filter((item, i) => {
-        return indexToRemove !== i;
+      return prev.filter((item) => {
+        return indexToRemove !== item.id;
       });
     });
   };
@@ -21,28 +22,40 @@ const TaskList = ({ tasks, setTasks }) => {
     });
   };
 
-  const empty = tasks.length;
+  const isEmpty = !tasks.length;
 
   return (
     <ul className="task-list">
-      {empty ? null : <EmptyList />}
-      {tasks.map((task, i) => {
-        return (
-          <TaskItem
-            text={task.value}
-            task={task}
-            key={i}
-            updateTaskDone={() => updateTaskDone(i, task.done)}
-            deleteTask={() => deleteTask(i)}
-          />
-        );
-      })}
+      <CSSTransition
+        in={isEmpty}
+        timeout={700}
+        classNames="empty"
+        mountOnEnter
+        unmountOnExit
+      >
+        <EmptyList />
+      </CSSTransition>
+
+      <TransitionGroup>
+        {tasks.map((task, i) => {
+          return (
+            <CSSTransition key={task.id} timeout={500} classNames="item">
+              <TaskItem
+                text={task.value}
+                task={task}
+                updateTaskDone={() => updateTaskDone(i, task.done)}
+                deleteTask={() => deleteTask(task.id)}
+              />
+            </CSSTransition>
+          );
+        })}
+      </TransitionGroup>
     </ul>
   );
 };
 
 const EmptyList = () => {
-  return <h2 style={{ fontSize: 24 }}>Task list is empty</h2>;
+  return <h2 className="empty-list">Task list is empty</h2>;
 };
 
 export default TaskList;
